@@ -1,54 +1,104 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Node.js & TypeScript",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/devcontainers/features/aws-cli:1": {},
-		"ghcr.io/devcontainers/features/azure-cli:1": {},
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/devcontainers/features/git:1": {},
-		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {},
-		"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
-		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"amazonwebservices.aws-toolkit-vscode",
-				"ms-vscode.azurecli",
-				"dbaeumer.vscode-eslint",
-				"vscodevim.vim",
-				"vscode-icons-team.vscode-icons",
-				"streetsidesoftware.code-spell-checker",
-				"alexdima.copy-relative-path",
-				"EditorConfig.EditorConfig",
-				"donjayamanne.githistory",
-				"eamodio.gitlens",
-				"esbenp.prettier-vscode",
-				"humao.rest-client",
-				"burkeholland.simple-react-snippets",
-				"miclo.sort-typescript-imports",
-				"ChakrounAnas.turbo-console-log",
-				"styled-components.vscode-styled-components"
-			]
-		}
-	}
-
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  "name": "devc-react-app",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {},
+    "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "React App",
+      "onAutoForward": "openPreview"
+    }
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "waitFor": "onCreateCommand",
+  // "postCreateCommand": "yarn install",
+  "updateContentCommand": "yarn install",
+  "postAttachCommand": {
+    "server": "yarn start"
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "src/pages/_app.tsx"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bierner.color-info", // JSX and CSS color information
+        "styled-components.vscode-styled-components",
+        "vscodevim.vim",
+        "vscode-icons-team.vscode-icons",
+        "streetsidesoftware.code-spell-checker",
+        "alexdima.copy-relative-path",
+        "EditorConfig.EditorConfig",
+        "donjayamanne.githistory",
+        "shardulm94.trailing-spaces",
+        "github.vscode-pull-request-github",
+        "christian-kohler.npm-intellisense",
+        "eamodio.gitlens",
+        "humao.rest-client",
+        "burkeholland.simple-react-snippets",
+        "miclo.sort-typescript-imports",
+        "ChakrounAnas.turbo-console-log",
+        "amazonwebservices.aws-toolkit-vscode",
+        "ms-vscode.azurecli"
+      ]
+    },
+    "settings": {
+      // "terminal.integrated.shell.linux": "/bin/bash",
+      "files.eol": "\n",
+      "editor.tabSize": 2,
+      "remote.extensionKind": {
+        "ms-azuretools.vscode-docker": "workspace"
+      },
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
+      "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+      ],
+      "editor.formatOnSave": true,
+      "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      },
+      "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      },
+      "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      },
+      "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      },
+      "prettier-eslint.eslintIntegration": true
+    }
+  }
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
