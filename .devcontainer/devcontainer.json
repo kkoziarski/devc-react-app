@@ -27,9 +27,9 @@
   },
   // Use 'postCreateCommand' to run commands after the container is created.
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "npm install",
+  "updateContentCommand": "yarn install",
   "postAttachCommand": {
-    "server": "npm start"
+    "server": "yarn start"
   },
   // Configure tool-specific properties.
   "customizations": {
