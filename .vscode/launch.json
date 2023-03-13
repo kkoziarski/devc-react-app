@@ -7,8 +7,9 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "runtimeExecutable": "yarn",
+      "runtimeExecutable": "npm",
       "runtimeArgs": [
+        "run-script",
         "start"
       ],
       "skipFiles": [
