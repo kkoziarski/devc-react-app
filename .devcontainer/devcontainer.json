@@ -6,46 +6,28 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/aws-cli:1": {
-		"version": "latest"
-	},
-    "ghcr.io/devcontainers/features/azure-cli:1": {
-		"installBicep": true,
-		"version": "latest"
-	},
-    "ghcr.io/devcontainers/features/common-utils:2": {
-		"installZsh": true,
-		"configureZshAsDefaultShell": true,
-		"installOhMyZsh": true,
-		"upgradePackages": true,
-		"username": "automatic",
-		"userUid": "automatic",
-		"userGid": "automatic"
-	},
-    "ghcr.io/devcontainers/features/git:1": {
-		"ppa": true,
-		"version": "os-provided"
-	},
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-		"upgradePackages": true,
-		"packages": ""
-	},
-    "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
-    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-		"plugins": "ssh-agent npm",
-		"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
-		"username": "root"
-	},
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {
-		"jqVersion": "os-provided",
-		"yqVersion": "latest",
-		"gojqVersion": "latest"
-	}
+    // "ghcr.io/devcontainers/features/aws-cli:1": {
+    //   "version": "latest"
+    // },
+    // "ghcr.io/devcontainers/features/azure-cli:1": {
+    //   "installBicep": true,
+    //   "version": "latest"
+    // },
+    // "ghcr.io/devcontainers/features/common-utils:2": {
+    //   "installZsh": true,
+    //   "configureZshAsDefaultShell": true,
+    //   "installOhMyZsh": true,
+    //   "upgradePackages": true
+    // },
+    // "ghcr.io/devcontainers/features/git:1": {},
+    // "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+    //   "plugins": "ssh-agent npm",
+    //   "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions"
+    // },
+    // "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [
-    3000
-  ],
+  "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
       "label": "React App",
@@ -53,40 +35,36 @@
     }
   },
   // Use 'postCreateCommand' to run commands after the container is created.
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn install",
-  "postAttachCommand": {
-    "server": "npm run dev"
-  },
+  // "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install",
+  "postAttachCommand": "npm run dev",
   // Configure tool-specific properties.
   "customizations": {
     "codespaces": {
-      "openFiles": [
-        "src/App.tsx"
-      ]
+      "openFiles": ["src/App.tsx"]
     },
     "vscode": {
       "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "bierner.color-info", // JSX and CSS color information
-        "styled-components.vscode-styled-components",
-        "vscodevim.vim",
-        "vscode-icons-team.vscode-icons",
-        "streetsidesoftware.code-spell-checker",
-        "alexdima.copy-relative-path",
-        "EditorConfig.EditorConfig",
-        "donjayamanne.githistory",
-        "shardulm94.trailing-spaces",
-        "github.vscode-pull-request-github",
-        "christian-kohler.npm-intellisense",
-        "eamodio.gitlens",
-        "humao.rest-client",
-        "burkeholland.simple-react-snippets",
-        "miclo.sort-typescript-imports",
-        "ChakrounAnas.turbo-console-log",
-        "amazonwebservices.aws-toolkit-vscode",
-        "ms-vscode.azurecli"
+        // "dbaeumer.vscode-eslint",
+        // "esbenp.prettier-vscode",
+        // "bierner.color-info", // JSX and CSS color information
+        // "styled-components.vscode-styled-components",
+        // "vscodevim.vim",
+        // "vscode-icons-team.vscode-icons",
+        // "streetsidesoftware.code-spell-checker",
+        // "alexdima.copy-relative-path",
+        // "EditorConfig.EditorConfig",
+        // "donjayamanne.githistory",
+        // "shardulm94.trailing-spaces",
+        // "github.vscode-pull-request-github",
+        // "christian-kohler.npm-intellisense",
+        // "eamodio.gitlens",
+        // "humao.rest-client",
+        // "burkeholland.simple-react-snippets",
+        // "miclo.sort-typescript-imports",
+        // "ChakrounAnas.turbo-console-log",
+        // "amazonwebservices.aws-toolkit-vscode",
+        // "ms-vscode.azurecli"
       ]
     },
     "settings": {
