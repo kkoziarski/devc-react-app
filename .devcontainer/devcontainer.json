@@ -2,8 +2,6 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "devc-react-app",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  // "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
@@ -21,9 +19,9 @@
       "onAutoForward": "openPreview"
     }
   },
-  // Use 'postCreateCommand' to run commands after the container is created.
   "updateContentCommand": "npm install",
   "postAttachCommand": "npm run dev",
+  
   // Configure tool-specific properties.
   "customizations": {
     "codespaces": {
