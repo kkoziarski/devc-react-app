@@ -4,13 +4,7 @@
   "name": "devc-react-app",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-      "plugins": "ssh-agent npm",
-      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions git copypath kubectl history emoji encode64 z fzf",
-      "username": "root"
-    }
-  },
+  "features": {},
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
   "portsAttributes": {
@@ -21,7 +15,7 @@
   },
   "updateContentCommand": "npm install",
   "postAttachCommand": "npm run dev",
-  
+
   // Configure tool-specific properties.
   "customizations": {
     "codespaces": {
