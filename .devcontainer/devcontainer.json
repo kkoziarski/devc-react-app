@@ -36,7 +36,6 @@
     }
   },
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "waitFor": "onCreateCommand",
   "updateContentCommand": "npm install",
   "postAttachCommand": "npm run dev",
   // Configure tool-specific properties.
@@ -46,30 +45,27 @@
     },
     "vscode": {
       "extensions": [
-        // "dbaeumer.vscode-eslint",
-        // "esbenp.prettier-vscode",
-        // "bierner.color-info", // JSX and CSS color information
-        // "styled-components.vscode-styled-components",
-        // "vscodevim.vim",
-        // "vscode-icons-team.vscode-icons",
-        // "streetsidesoftware.code-spell-checker",
-        // "alexdima.copy-relative-path",
-        // "EditorConfig.EditorConfig",
-        // "donjayamanne.githistory",
-        // "shardulm94.trailing-spaces",
-        // "github.vscode-pull-request-github",
-        // "christian-kohler.npm-intellisense",
-        // "eamodio.gitlens",
-        // "humao.rest-client",
-        // "burkeholland.simple-react-snippets",
-        // "miclo.sort-typescript-imports",
-        // "ChakrounAnas.turbo-console-log",
-        // "amazonwebservices.aws-toolkit-vscode",
-        // "ms-vscode.azurecli"
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bierner.color-info", // JSX and CSS color information
+        "styled-components.vscode-styled-components",
+        "vscodevim.vim",
+        "vscode-icons-team.vscode-icons",
+        "streetsidesoftware.code-spell-checker",
+        "alexdima.copy-relative-path",
+        "EditorConfig.EditorConfig",
+        "donjayamanne.githistory",
+        "shardulm94.trailing-spaces",
+        "github.vscode-pull-request-github",
+        "christian-kohler.npm-intellisense",
+        "eamodio.gitlens",
+        "humao.rest-client",
+        "burkeholland.simple-react-snippets",
+        "miclo.sort-typescript-imports",
+        "ChakrounAnas.turbo-console-log",
       ]
     },
     "settings": {
-      // "terminal.integrated.shell.linux": "/bin/bash",
       "files.eol": "\n",
       "editor.tabSize": 2,
       "remote.extensionKind": {
